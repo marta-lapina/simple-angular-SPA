@@ -22,6 +22,9 @@
                 templateUrl : 'pages/contact.html',
                 controller  : 'contactController'
             });
+			
+		// use the HTML5 History API
+        //$locationProvider.html5Mode(true);
     });
 
     // create the controller and inject Angular's $scope
