@@ -37,6 +37,10 @@
     });
 	
 	myApp.controller('aboutController', function($scope) {
+        $scope.message = "Hellloooooou!";
+    });
+
+    myApp.controller('contactController', function($scope) {
         // function to submit the form after all validation has occurred            
         $scope.submitForm = function(isValid) {
 
@@ -45,8 +49,4 @@
           alert('Gj');
         }
       };
-    });
-
-    myApp.controller('contactController', function($scope) {
-        $scope.message = 'Contact us! JK. This is just a demo.';
     });
