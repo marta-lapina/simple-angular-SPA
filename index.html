@@ -2,6 +2,7 @@
     <!DOCTYPE html>
     <html ng-app="myApp">
     <head>
+    <meta charset="utf-8">
       <!-- SCROLLS -->
       <!-- load bootstrap and fontawesome via CDN -->
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -23,7 +24,7 @@
             <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                    <a class="navbar-brand" href="/">Country catalogue</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -37,13 +38,13 @@
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <div id="main">
-		
-		{{ message }}
 
             <!-- angular templating -->
             <!-- this is where content will be injected -->
 			
 			<div ng-view></div>
+            
+            {{ countries }}
 
         </div>
 
