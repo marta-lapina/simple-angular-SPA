@@ -44,8 +44,29 @@
 			
 			<div ng-view></div>
             
-            {{ countries }}
+            <form>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-search"></i></div>
 
+                  <input type="text" class="form-control" placeholder="Search country by name" ng-model="countryFilter">
+
+                </div>      
+              </div>
+            </form>
+            
+            <table>
+              <tr>
+                <th>Code</th>
+                <th>Country</th>
+                <th>Population</th>
+              </tr>
+              <tr ng-repeat="country in countries | orderBy: 'code' | filter: countryFilter">
+                <td>{{country.code}}</td>
+                <td>{{country.name}}</td>
+                <td>{{country.population}}</td>
+              </tr>
+            </table>
         </div>
 
     </body>
