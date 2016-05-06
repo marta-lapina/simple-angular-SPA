@@ -43,6 +43,7 @@
 			
 			<div ng-view></div>
             
+			<div class="col-sm-offset-1">
             <form>
               <div class="form-group">
                 <div class="input-group">
@@ -52,11 +53,6 @@
 
                 </div>      
               </div>
-            </form>
-            
-            <form>
-                name <input type="text" ng-model="country.name" />
-                address <input type="text" ng-model="country.population"/>
             </form>
             
             <table>
@@ -72,6 +68,7 @@
                 <td><button class="btn btn-primary" ng-click= edit(country)">Edit</button></td>
               </tr>
             </table>
+			</div>
         </div>
 
     </body>
