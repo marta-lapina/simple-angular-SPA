@@ -1,5 +1,9 @@
 // create the module and name it myApp
-    var myApp = angular.module('myApp', ['ngRoute']);
+    var myApp = angular.module('myApp', ['ngRoute'])
+	.constant("baseURL","http://localhost:3000/") {
+		this.getCountries = function() { return $http.get(baseURL); };
+		this.getCountry = function(index) { return $http.get(baseURL+"/"+index); };
+	};
 	
 	// configure our routes
     myApp.config(function($routeProvider) {
@@ -22,9 +26,6 @@
                 templateUrl : 'pages/contact.html',
                 controller  : 'contactController'
             });
-			
-		// use the HTML5 History API
-        //$locationProvider.html5Mode(true);
     });
 
     // create the controller and inject Angular's $scope
