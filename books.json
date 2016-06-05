@@ -1,0 +1,116 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "name": "Gone with the wind",
+      "author": "Margaret Mitchell",
+      "image": "images/Gone_with_the_Wind.jpg",
+      "category": "romance",
+      "label": "Pieejama",
+      "price": "",
+      "description": "A classic by Margaret Mitchell.",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Pēdējā lappuse ieplēsta",
+          "author": "Lasītājs 1",
+          "date": "2014-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Pasakas par ziediem",
+      "author": "Anna Sakse",
+      "image": "images/pasakas_par_ziediem.jpg",
+      "category": "Fantasy",
+      "label": "",
+      "price": "",
+      "description": "Patīk gan bērniem, gan pieaugušajiem.",
+      "comments": [
+        {
+          "rating": 7,
+          "comment": "Ļoti iesaku",
+          "author": "Lasītājs 1",
+          "date": "2014-10-16T17:57:28.556094Z"
+        },
+        {
+          "rating": 9,
+          "comment": "Izlasīju, patika",
+          "author": "Lasītājs 2",
+          "date": "2015-09-05T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Lielā ilustrētā enciklopēdija",
+      "author": "Profesors & Co.",
+      "image": "images/Liela-ilustreta.jpg",
+      "category": "Science",
+      "label": "",
+      "price": "",
+      "description": "Vispārīga enciklopēdija, lielisks palīgs skolniekiem.",
+      "comments": [
+        {
+          "rating": 5,
+          "comment": "Pa vidu trūkst vairākas lapas, citas apzīmētas",
+          "author": "Lasītājs 1",
+          "date": "2014-10-16T17:57:28.556094Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Dikāna receptes",
+      "image": "images/Dikana-receptes.jpg",
+      "category": "Food",
+      "labe": "",
+      "price": "",
+      "description": "Ēdiet garšīgi, lai kilogrami zūd!",
+      "comments": [
+        {
+          "rating": 10,
+          "comment": "Tas strādā!",
+          "author": "Lasītājs 1",
+          "date": "2014-10-16T17:57:28.556094Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Nekam neder, gadu ievēroju diētu un nekādu rezultātu",
+          "author": "Lasītājs 2",
+          "date": "2015-09-05T17:57:28.556094Z"
+        }
+      ]
+    }
+  ],
+  "empl": [
+    {
+      "id": 0,
+      "name": "Aivars Niedrītis",
+      "image": "images/anied.png",
+      "description": "Darbu apraksts"
+    },
+    {
+      "id": 1,
+      "name": "Jānis bērziņš",
+      "image": "images/anied.png",
+      "description": "Cits apraksts"
+    }
+  ],
+  "feedback": [
+    {
+      "mychannel": "tel",
+      "firstName": "Aivars",
+      "lastName": "Niedrītis",
+      "agree": true,
+      "email": "anm@lu.lv",
+      "tel": {
+        "prefix": "371",
+        "number": "29479962"
+      },
+      "comments": "Vajadzīga informācija par ...",
+      "id": 1
+    }
+  ]
+}
