@@ -1,75 +1,36 @@
-<!-- index.html -->
-    <!DOCTYPE html>
-    <html ng-app="myApp">
-    <head>
-    <meta charset="utf-8">
-      <!-- SCROLLS -->
-      <!-- load bootstrap and fontawesome via CDN -->
+<!DOCTYPE html>
+<html lang="en" ng-app="carsApp">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Sākums</title>    
+<!-- build:css styles/main.css -->
+ <!-- load bootstrap and fontawesome via CDN -->
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
 
       <!-- SPELLS -->
       <!-- load angular and angular route via CDN -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
-      <script src="script.js"></script>
-	 
-    </head>
-	
-	<!-- define angular controller -->
-    <body ng-controller="mainController">
-        <!-- HEADER AND NAVBAR -->
-        <header>
-            <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Country catalogue</a>
-                </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.min.js"></script>
+          <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script> -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+<!-- endbuild -->
+</head>
+<body>
+    
+ <div ui-view="header"></div>
+ <div ui-view="content"></div>
+ <div ui-view="footer"></div>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#/about"><i class="fa fa-question-circle-o"></i> About</a></li>
-                    <li><a href="#/contact"><i class="fa fa-comment"></i> Contact</a></li>
-                </ul>
-            </div>
-            </nav>
-        </header>
-
-        <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <div id="main">
-
-            <!-- angular templating -->
-            <!-- this is where content will be injected -->
-			
-			<div ng-view></div>
-            
-			<div class="col-sm-offset-1">
-            <form>
-              <div class="form-group">
-                <div class="input-group">
-                  <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
-                  <input type="text" class="form-control" placeholder="Search country by name" ng-model="countryFilter">
-
-                </div>      
-              </div>
-            </form>
-            
-            <table>
-              <tr>
-                <th>Code</th>
-                <th>Country</th>
-                <th>Population</th>
-              </tr>
-              <tr ng-repeat="country in countries | orderBy: 'code' | filter: countryFilter">
-                <td>{{country.code}}</td>
-                <td>{{country.name}}</td>
-                <td>{{country.population}}</td>
-                <td><button class="btn btn-primary" ng-click= edit(country)">Edit</button></td>
-              </tr>
-            </table>
-			</div>
-        </div>
-
-    </body>
-    </html>
+<!-- build:js scripts/main.js -->
+ <!-- <script src="../bower_components/angular/angular.min.js"></script> -->
+ <!-- <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script> -->
+ <!-- <script src="../bower_components/angular-resource/angular-resource.min.js"></script> -->
+  <script src="scripts/app3.js"></script>
+  <script src="scripts/controller4.js"></script>   
+  <script src="scripts/services4.js"></script>
+<!-- endbuild -->    
+</body>
+</html>
