@@ -1,5 +1,5 @@
 'use strict';
-angular.module('carsApp')
+angular.module('bookApp')
  .controller('MenuController', [ '$scope', 'menuFactory', function($scope,menuFactory) {
   $scope.showMenu = false;
   $scope.message = "Loading ...";

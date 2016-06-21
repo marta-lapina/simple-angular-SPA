@@ -1,5 +1,5 @@
 'use strict';
-angular.module('carsApp')
+angular.module('bookApp')
  .constant("baseURL","http://localhost:3000/")
  .service('menuFactory', ['$resource', 'baseURL', function($resource,baseURL) {
   this.getFeedback = function () {
@@ -13,8 +13,6 @@ angular.module('carsApp')
 .service('corporateFactory', ['$resource', 'baseURL', function($resource,baseURL) {
  this.getEmployees = function() {
   return $resource(baseURL+"empl/:id",null,{'update':{method:'PUT'}}); }
-// this.getEmployees = function() { return $http.get(baseURL+"empl"); };
-// this.getEmployee = function(index) { return $http.get(baseURL+"empl/"+index); };
  }])
 
 ;
