@@ -1,24 +1,31 @@
-
  <div class="container">
+ 
   <div class="row row-content" ng-controller="BookDetailController">
    <div class="col-xs-12" ng-if="!showBook"><h3>{{message}}</h3></div>
    <div class="col-xs-12" ng-if="showBook">
-    <button class="btn btn-xl btn-info pull-right" type="button" ui-sref="app.menu">Back to catalogue</button>   
+   
+    <button class="btn btn-xl btn-info pull-right" type="button" ui-sref="app.menu">Back to catalogue</button>
+    
     <div class="media">
      <div class="media-left">
       <a href="#"><img class="media-object" src="{{book.image}}"></a>
      </div>
      <div class="media-body">
+     
       <h2 class="media-heading">{{book.name}} </br>
        <span class="label label-info label-xs">{{book.label}}</span>
       </h2>
       <p>{{book.description}}</p>
+      
      </div>
     </div>
+   
    </div>
+   
+   <!-- comment section -->
    <div class="col-xs-9 col-xs-offset-1" ng-if="showBook">
     <p style="padding:5px;"></p>
-    <p>Comments sorted by (rating,comment,date,author) 
+    <p>Comments sorted by (comment,date,author) 
      <input type="text" ng-model="query">      
     </p>
     <blockquote ng-repeat="comment in book.comments | orderBy:query">
@@ -32,14 +39,17 @@
       <footer>{{feedback.author}}</footer>
      </blockquote>
     </div>
-       
+
+    <!-- form for adding a new comment -->
     <form class="form-horizontal" name="feedbackForm" ng-submit="sendFeedback()" novalidate>
+    
      <div class="form-group">
       <label for="author" class="col-sm-3 control-label">Name</label>                      <div class="col-sm-9" ng-class="{ 'has-error has-feedback' : feedbackForm.author.$invalid && !feedbackForm.author.$pristine }">
        <input type="text" class="form-control" id="author" name="author" placeholder="Please provide your name" ng-model="feedback.author" required>
        <span ng-show="feedbackForm.author.$error.required && !feedbackForm.author.$pristine" class="help-block">Please provide your name</span>
       </div>
      </div>
+     
     <div class="form-group">
      <label for="comment" class="col-sm-3 control-label">Comment</label>
      <div class="col-sm-9" ng-class="{ 'has-error has-feedback' : feedbackForm.comment.$invalid && !feedbackForm.comment.$pristine }">
@@ -47,11 +57,13 @@
       <span ng-show="feedbackForm.comment.$error.required && !feedbackForm.comment.$pristine" class="help-block">You can't paste an empty comment</span>
      </div>
     </div>
+    
     <div class="form-group">
      <div class="col-sm-offset-3 col-sm-9">
-      <button type="submit" class="btn btn-primary" ng-disabled="feedbackForm.$invalid">Submit Comment</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="feedbackForm.$invalid">Submit</button>
      </div>
     </div>
+    
    </form>
        
    </div>

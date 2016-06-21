@@ -7,7 +7,7 @@ angular.module('bookApp',['ui.router','ngResource'])
   'footer': { templateUrl : 'views/footer.html' }
  } })
  .state('app.about', { url:'about', views: {
-  'content@': { templateUrl : 'views/about.html', controller : 'AboutController' }
+  'content@': { templateUrl : 'views/about.html' }
  } })
  .state('app.contact', { url:'contact', views: {
   'content@': { templateUrl : 'views/contact.html', controller : 'ContactController' }

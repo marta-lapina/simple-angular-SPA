@@ -15,6 +15,26 @@
           "comment": "Pēdējā lappuse ieplēsta",
           "author": "Lasītājs 1",
           "date": "2014-10-16T17:57:28.556094Z"
+        },
+        {
+          "comment": "looks nice",
+          "author": "me",
+          "date": "2016-06-21T08:25:34.301Z"
+        },
+        {
+          "comment": "jj",
+          "author": "jj",
+          "date": "2016-06-21T09:33:48.912Z"
+        },
+        {
+          "comment": "aa",
+          "author": "aa",
+          "date": "2016-06-21T09:36:29.273Z"
+        },
+        {
+          "comment": "hi",
+          "author": "hi",
+          "date": "2016-06-21T09:36:49.141Z"
         }
       ]
     },
@@ -84,32 +104,16 @@
       ]
     }
   ],
-  "empl": [
-    {
-      "id": 0,
-      "name": "Aivars Niedrītis",
-      "image": "images/anied.png",
-      "description": "Darbu apraksts"
-    },
-    {
-      "id": 1,
-      "name": "Jānis bērziņš",
-      "image": "images/anied.png",
-      "description": "Cits apraksts"
-    }
-  ],
   "feedback": [
     {
-      "mychannel": "tel",
-      "firstName": "Aivars",
-      "lastName": "Niedrītis",
-      "agree": true,
-      "email": "anm@lu.lv",
+      "mychannel": "",
+      "firstName": "marte",
+      "lastName": "lapina",
+      "agree": false,
+      "email": "m@m.lv",
       "tel": {
-        "prefix": "371",
-        "number": "29479962"
+        "number": "123"
       },
-      "comments": "Vajadzīga informācija par ...",
       "id": 1
     }
   ]
