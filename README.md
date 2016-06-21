@@ -1,6 +1,6 @@
 # simple-angular-SPA
 
-This is a homework on AngularJS v1. It inludes a simple SPA using templates, routing and other stuff.
+Homework on AngularJS v1.
 
 ## Serving locally with NodeJS http-server
 
@@ -11,8 +11,5 @@ The application will be available at "http://localhost:8080/". You can specify a
 ## Serving JSON with NodeJS json-server
 
 Install the server: `npm install json-server -g`
-Start it: `json-server --watch .\countries.json`
+Start it: `json-server --watch .\books.json`
 It will index elements in JSON file and store them in a database. By default, JSON tree contents are available on http://localhost:3000.
-
-## TODO:
- - make URLs pretty with $locationProvider
