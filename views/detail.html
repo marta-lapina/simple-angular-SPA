@@ -1,17 +1,16 @@
 
  <div class="container">
-  <div class="row row-content" ng-controller="CarDetailController">
+  <div class="row row-content" ng-controller="BookDetailController">
    <div class="col-xs-12" ng-if="!showBook"><h3>{{message}}</h3></div>
    <div class="col-xs-12" ng-if="showBook">
-    <button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.menu">Atpakaļ uz piedāvājumiem</button>   
+    <button class="btn btn-xl btn-info pull-right" type="button" ui-sref="app.menu">Back to catalogue</button>   
     <div class="media">
      <div class="media-left">
       <a href="#"><img class="media-object" src="{{book.image}}"></a>
      </div>
      <div class="media-body">
-      <h2 class="media-heading">{{book.name}} 
-       <span class="label label-danger label-xs">{{book.label}}</span>
-       <span class="badge">{{book.price | currency}}</span>
+      <h2 class="media-heading">{{book.name}} </br>
+       <span class="label label-info label-xs">{{book.label}}</span>
       </h2>
       <p>{{book.description}}</p>
      </div>
@@ -19,49 +18,33 @@
    </div>
    <div class="col-xs-9 col-xs-offset-1" ng-if="showBook">
     <p style="padding:5px;"></p>
-    <p><strong>Komentāri</strong> kārtoti pēc (rating,comment,date,author) 
-     <input type="text" ng-model="query">       
+    <p>Comments sorted by (rating,comment,date,author) 
+     <input type="text" ng-model="query">      
     </p>
     <blockquote ng-repeat="comment in book.comments | orderBy:query">
-     <p>{{comment.rating}} Līmenis</p>
      <p>{{comment.comment}}</p>
      <footer>{{comment.author}}, {{comment.date | date:'mediumDate'}}</footer>
     </blockquote>
        
     <div ng-show="feedbackForm.$valid || (feedbackForm.author.$dirty && feedbackForm.comment.$dirty)">
      <blockquote>
-      {{feedback.rating}} Līmenis<br>{{feedback.comment}}
+      {{feedback.comment}}
       <footer>{{feedback.author}}</footer>
      </blockquote>
     </div>
        
     <form class="form-horizontal" name="feedbackForm" ng-submit="sendFeedback()" novalidate>
      <div class="form-group">
-      <label for="author" class="col-sm-3 control-label">Jūsu vārds</label>                      <div class="col-sm-9" ng-class="{ 'has-error has-feedback' : feedbackForm.author.$invalid && !feedbackForm.author.$pristine }">
-       <input type="text" class="form-control" id="author" name="author" placeholder="Ievadiet vārdu" ng-model="feedback.author" required>
-       <span ng-show="feedbackForm.author.$error.required && !feedbackForm.author.$pristine" class="help-block">Nav ievadīts Komentāra autors.</span>
+      <label for="author" class="col-sm-3 control-label">Name</label>                      <div class="col-sm-9" ng-class="{ 'has-error has-feedback' : feedbackForm.author.$invalid && !feedbackForm.author.$pristine }">
+       <input type="text" class="form-control" id="author" name="author" placeholder="Please provide your name" ng-model="feedback.author" required>
+       <span ng-show="feedbackForm.author.$error.required && !feedbackForm.author.$pristine" class="help-block">Please provide your name</span>
       </div>
      </div>
-     <div class="form-group">
-      <label for="stars" class="col-sm-3 control-label">Līmenis</label>               
-      <div class="col-sm-9">
-      <label class="radio-inline">
-       <input type="radio" name="rating" ng-model="feedback.rating" value="1">1</label>
-      <label class="radio-inline">
-       <input type="radio" name="rating" ng-model="feedback.rating" value="2">2</label>
-      <label class="radio-inline">
-       <input type="radio" name="rating" ng-model="feedback.rating" value="3">3</label>
-      <label class="radio-inline">
-       <input type="radio" name="rating" ng-model="feedback.rating" value="4">4</label>
-      <label class="radio-inline">
-       <input type="radio" name="rating" ng-model="feedback.rating" value="5">5</label>
-     </div>                        
-    </div>
     <div class="form-group">
-     <label for="comment" class="col-sm-3 control-label">Komentārs</label>
+     <label for="comment" class="col-sm-3 control-label">Comment</label>
      <div class="col-sm-9" ng-class="{ 'has-error has-feedback' : feedbackForm.comment.$invalid && !feedbackForm.comment.$pristine }">
       <textarea class="form-control" id="comment" name="comment" rows="6" ng-model="feedback.comment" required></textarea>
-      <span ng-show="feedbackForm.comment.$error.required && !feedbackForm.comment.$pristine" class="help-block">Nav ievadīts komentārs.</span>
+      <span ng-show="feedbackForm.comment.$error.required && !feedbackForm.comment.$pristine" class="help-block">You can't paste an empty comment</span>
      </div>
     </div>
     <div class="form-group">

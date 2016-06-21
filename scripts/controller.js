@@ -3,18 +3,19 @@ angular.module('bookApp')
  .controller('MenuController', [ '$scope', 'menuFactory', function($scope,menuFactory) {
   $scope.showMenu = false;
   $scope.message = "Loading ...";
-  menuFactory.getCars().query(
-   function(resp) { $scope.cars = resp; $scope.showMenu = true; },
+  menuFactory.getBooks().query(
+   function(resp) { $scope.books = resp; $scope.showMenu = true; },
    function(resp) { $scope.message = "Error: "+resp.status + " " + resp.statusText; });
       $scope.tab = 1;
       $scope.filtText = '';
       $scope.showDetails = false;
       $scope.select = function(setTab) { 
-       $scope.tab = setTab; 
-       if (setTab === 2) { $scope.filtText = "Balts"; }
-       else if (setTab === 3) { $scope.filtText = "Zils"; }
-       else if (setTab === 4) { $scope.filtText = "Melns"; }
-       else { $scope.filtText = ""; }                                    
+       $scope.tab = setTab;
+       $scope.filtText = "";
+     //  if (setTab === 2) { $scope.filtText = "Balts"; }
+     //  else if (setTab === 3) { $scope.filtText = "Zils"; }
+     //  else if (setTab === 4) { $scope.filtText = "Melns"; }
+     //  else { $scope.filtText = ""; }                                    
                                      };
       $scope.isSelected = function (checkTab) {
                 return ($scope.tab === checkTab);
@@ -45,21 +46,21 @@ angular.module('bookApp')
   };
  }])
 
-.controller('CarDetailController', ['$scope','$stateParams','menuFactory', function($scope,$stateParams,menuFactory) {
+.controller('BookDetailController', ['$scope','$stateParams','menuFactory', function($scope,$stateParams,menuFactory) {
             $scope.feedback = {rating:'', comment:'', author:'', date:'' };
             $scope.feedback.rating='5';
             $scope.sendFeedback = function() {
                 $scope.feedback.date=new Date;
-                $scope.car.comments.push($scope.feedback);
-                menuFactory.getCars().update({id:$scope.car.id},$scope.car);
+                $scope.book.comments.push($scope.feedback);
+                menuFactory.getBooks().update({id:$scope.book.id},$scope.book);
                 $scope.feedbackForm.$setPristine();
                 $scope.feedback = {author:"", rating:"5", comment:""};
                 console.log($scope.feedback);
             };
-    $scope.showCar = false;
+    $scope.showBook = false;
     $scope.message="Loading ...";
-    menuFactory.getCars().get({id:parseInt($stateParams.id,10)}) .$promise.then(
-     function(resp) { $scope.car = resp; $scope.showCar = true; },
+    menuFactory.getBooks().get({id:parseInt($stateParams.id,10)}) .$promise.then(
+     function(resp) { $scope.book = resp; $scope.showBook = true; },
      function(resp) { $scope.message = "Error: "+resp.status + " " + resp.statusText; } );
         }])
 .controller('AboutController', ['$scope', 'corporateFactory', 
@@ -77,10 +78,10 @@ angular.module('bookApp')
   corporateFactory.getEmployees().get({id:0}) .$promise.then(
    function(resp) { $scope.emp = resp; $scope.showEmp = true; },
    function(resp) { $scope.message = "Error: "+resp.status + " " + resp.statusText; } );     
-  $scope.showCar = true;
+  $scope.showBook = true;
   $scope.message="Loading ...";
-  menuFactory.getCars().get({id:3}) .$promise.then(
-   function(resp) { $scope.car = resp; $scope.showCar = true; },
+  menuFactory.getBooks().get({id:3}) .$promise.then(
+   function(resp) { $scope.book = resp; $scope.showBook = true; },
    function(resp) { $scope.message = "Error: "+resp.status + " " + resp.statusText; } );
  }])
 ;

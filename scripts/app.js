@@ -15,8 +15,8 @@ angular.module('bookApp',['ui.router','ngResource'])
  .state('app.menu', { url: 'menu', views: {
   'content@': { templateUrl : 'views/menu.html', controller : 'MenuController' }
  } })
- .state('app.cardetails', { url: 'menu2/:id', views: {
-  'content@': { templateUrl : 'views/detail.html', controller : 'CarDetailController' }
+ .state('app.bookdetails', { url: 'menu2/:id', views: {
+  'content@': { templateUrl : 'views/detail.html', controller : 'BookDetailController' }
  } });
  $urlRouterProvider.otherwise('/');
 })
